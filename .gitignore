@@ -1,0 +1,4 @@
+.vagrant
+*.pg_dump
+ckan/
+ckan-rc/
