@@ -8,7 +8,7 @@ deb:
 
 venv:
 	virtualenv $(ROOT)
-	$(ROOT)/bin/pip install -e 'git+https://github.com/okfn/ckan.git#egg=ckan'
+	$(ROOT)/bin/pip install -e 'git+git@github.com:regardscitoyens/ckan.git@master#egg=ckan'
 	$(ROOT)/bin/pip install -r ckan/src/ckan/requirements.txt
 
 solr:
