@@ -1,4 +1,4 @@
 .vagrant
 *.pg_dump
-ckan/
+root/
 ckan-rc/

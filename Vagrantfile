@@ -13,10 +13,10 @@ config.hostmanager.ignore_private_ip = false
 config.vm.network :private_network, ip: "192.168.33.10"
 config.vm.network :forwarded_port, guest: 80, host: 8080
 config.hostsupdater.aliases = [
-      "www.nosdonnees.fr"
+      "www2.nosdonnees.fr"
       ]
 config.hostmanager.aliases = [
-      "www.nosdonnees.fr"
+      "www2.nosdonnees.fr"
     ]
 #config.vm.synced_folder ".", "/vagrant/"
 end
