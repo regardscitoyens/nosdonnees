@@ -10,6 +10,7 @@ venv:
 	virtualenv $(ROOT)
 	$(ROOT)/bin/pip install -e 'git+git@github.com:regardscitoyens/ckan.git@master#egg=ckan'
 	$(ROOT)/bin/pip install -r ckan/src/ckan/requirements.txt
+	$(ROOT)/bin/python setup.py develop
 
 solr:
 	sudo rm /etc/solr/conf/schema.xml
