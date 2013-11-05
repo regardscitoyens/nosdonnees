@@ -1,0 +1,77 @@
+{% set stats = h.get_site_statistics() %}
+<div role="main" class="hero">
+  <div class="container">
+    <h1 class="page_heading">Bienvenue sur NosDonnées.fr !</h1>
+    <div class="row row1">
+      <div class="span4">
+        <div class="module-content box find">
+          <header>
+            <h3 class="heading">{{ _("Search Your Data") }}</h3>
+          </header>
+          <section class="group-list module module-narrow module-shallow">
+            <form class="search-form" method="get" action="{% url_for controller='package', action='search' %}">
+              <div class="search-input control-group search-giant">
+                <input type="text" class="search" name="q" value="" autocomplete="off" placeholder="{{ placeholder }}" />
+                <button type="submit">
+                  <i class="icon-search"></i>
+                  <span>{{ _('Search') }}</span>
+                </button>
+              </div>
+              <p>NosDonnées.fr recense <a href="/dataset">
+                {{ h.SI_number_span(stats.dataset_count) }}
+                {{ _('dataset') if stats.dataset_count == 1 else _('datasets') }}
+                </a> que vous pouvez parcourir, découvrir et télécharger.
+              </p>
+            </form>
+          </section>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="module-content box share">
+          <header>
+            <h3>Partager des données</h3>
+          </header>
+          <section>
+            <p>
+              Ajouter vos propres jeux de données pour les partager avec
+              d'autres et trouver d'autres personnes intéressées par vos
+              données.
+            </p>
+            <a href="/dataset/new" class="btn btn-danger">Enregistrer des données »</a>
+          </section>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="module-content box collaborate">
+          <header>
+            <h3>Collaborer</h3>
+          </header>
+          <section class="group-list module module-narrow module-shallow">
+            <p>Apprenez-en plus sur l'Open Data en explorant ces ressources :</p>
+            <ul>
+              <li><a href="http://opendatahandbook.org/fr/">Le Manuel de l'Open Data</a></li>
+              <li><a href="http://www.youtube.com/watch?v=aHxv_2BMJfw">L'Open Data à la loupe</a></li>
+              <li><a href="http://fr.wikipedia.org/wiki/Données_ouvertes">L'Open Data par Wikipédia</a></li>
+              <li><a href="/wiki/">Le wiki de NosDonnées.fr</a></li>
+            </ul>
+            <p style="margin-top: 5px;">
+              Contribuer au <a
+                href="https://github.com/RegardsCitoyens/nosdonnees">développement</a>
+              et à la <a
+                href="https://www.transifex.com/projects/p/ckan/language/fr/">traduction</a>
+              de NosDonnées.fr
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div role="main">
+  <div class="container">
+    <div class="row row2">
+      {% snippet 'home/snippets/featured_group.html' %}
+    </div>
+  </div>
+</div>
+    </div> 

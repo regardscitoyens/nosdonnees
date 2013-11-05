@@ -28,6 +28,9 @@ pg: user db
 serve:
 	$(PASTER) serve $(CONFIG)
 
+dev:
+	$(PASTER) serve --reload development.ini
+
 update:
 	cd $(ROOT)/src/ckan; $(PASTER) db clean --config=$(CONFIG)
 	cd $(ROOT)/src/ckan; $(PASTER) db load --config=$(CONFIG) /vagrant/131007-nosdonnees_db.pg_dump

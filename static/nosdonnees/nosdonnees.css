@@ -1,0 +1,105 @@
+.account-masthead,
+.masthead {
+    background: none;
+}
+.nosdonnees-header {
+    background-color: #E2E2E2;
+    background-image: -moz-linear-gradient(center top , #E2E2E2, #CCCCCC);
+    border-bottom: 1px solid #CCCCCC;
+    box-shadow: 0 2px 10px #DDDDDD;
+    padding-bottom: 10px;
+}
+
+.header-image {
+    top: -20px;
+    position:absolute;
+}
+
+.site-footer {
+    background-color: #DBDBDB;
+    background-image: -moz-linear-gradient(center top , #DBDBDB, #FFFFFF);
+    border-top: 2px solid #CCCCCC;
+}
+
+.homepage.layout-1 .row1 .span4 .box {
+    min-height: 17em;
+    background-color: #FFF7C0;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.find {
+    background: url("/nosdonnees/find.png") no-repeat scroll right top;
+}
+.share {
+    background: url("/nosdonnees/share.png") no-repeat scroll right top;
+}
+.collaborate {
+    background: url("/nosdonnees/collaborate.png") no-repeat scroll right top;
+}
+
+.homepage .search-form {
+    border: 0px;
+}
+
+
+.account-masthead .account ul li
+{
+    border: 0px;
+}
+
+.module-content .pagination {
+    margin-bottom: 0px;
+}
+
+a,
+.site-footer a,
+.site-footer strong,
+.site-footer label,
+.masthead .navigation .nav-pills li a,
+.account-masthead .account ul li a,
+.site-footer a
+{
+    color: #BB2222;
+}
+
+.masthead .navigation .nav-pills li a,
+.account-masthead .account ul li a
+{
+    font-weight: bold;
+}
+
+.masthead .navigation .nav-pills li a:hover,
+.masthead .navigation .nav-pills li.active a,
+.account-masthead .account ul li a:hover,
+.site-footer a:hover
+{
+    text-decoration: underline;
+    color: #BB2222;
+    background-color: transparent;
+}
+
+.nav-item.active > a,
+.nav-aside li.active a
+{
+    background-color: #BB2222;
+}
+
+
+[role="main"] {
+    background:white;
+}
+
+/* bootstrap */
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: #ffffff;
+  background-color: #BB2222;
+}
+
+.pill {
+  color: #000;
+  background-color: #E2E2E2;
+}
+

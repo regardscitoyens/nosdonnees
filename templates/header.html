@@ -1,5 +1,7 @@
 {% block header_wrapper %}
 {% block header_account %}
+<div class="nosdonnees-header">
+<div class="container">
   <header class="account-masthead">
     <div class="container">
       {% block header_account_container_content %}
@@ -71,7 +73,7 @@
 
       {% block header_logo %}
         {% if g.site_logo %}
-          <a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a>
+          <a class="logo" href="{{ h.url('home') }}"><img width="74" src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a>
         {% else %}
           <h1>
             <a href="{{ h.url('home') }}">{{ g.site_title }}</a>
@@ -114,4 +116,6 @@
     </div>
   </div>
 </header>
+</div>
+</div>
 {% endblock %}
