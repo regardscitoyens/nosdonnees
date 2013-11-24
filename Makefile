@@ -1,6 +1,9 @@
-ROOT=/vagrant/root
-CONFIG=/vagrant/development.ini
+ROOT=`pwd`
+CONFIG=$(ROOT)/development.ini
 PASTER=$(ROOT)/bin/paster
+
+test:
+	echo $(ROOT)
 
 deb:
 	sudo aptitude -y update
@@ -8,13 +11,15 @@ deb:
 
 venv:
 	virtualenv $(ROOT)
+	$(ROOT)/bin/pip install --upgrade pip
 	$(ROOT)/bin/pip install -e 'git+git@github.com:regardscitoyens/ckan.git@master#egg=ckan'
-	$(ROOT)/bin/pip install -r ckan/src/ckan/requirements.txt
+	$(ROOT)/bin/pip install -r src/ckan/requirements.txt
+	$(ROOT)/bin/pip install gunicorn
 	$(ROOT)/bin/python setup.py develop
 
 solr:
 	sudo rm /etc/solr/conf/schema.xml
-	sudo ln -s $(ROOT)/src/ckan/ckan/config/solr/schema-2.0.xml /etc/solr/conf/schema.xml
+	sudo ln -s $(ROOT)/ckan/ckan/config/solr/schema-2.0.xml /etc/solr/conf/schema.xml
 	sudo service tomcat6 restart
 
 user:
@@ -29,10 +34,10 @@ serve:
 	$(PASTER) serve $(CONFIG)
 
 dev:
-	$(PASTER) serve --reload development.ini
+	$(PASTER) serve --reload $(CONFIG)
 
 update:
 	cd $(ROOT)/src/ckan; $(PASTER) db clean --config=$(CONFIG)
-	cd $(ROOT)/src/ckan; $(PASTER) db load --config=$(CONFIG) /vagrant/131007-nosdonnees_db.pg_dump
+	cd $(ROOT)/src/ckan; $(PASTER) db load --config=$(CONFIG) $(ROOT)/131007-nosdonnees_db.pg_dump
 
 vagrant: deb venv solr

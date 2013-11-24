@@ -2,3 +2,6 @@
 *.pg_dump
 root/
 ckan-rc/
+include/
+lib/
+local/
