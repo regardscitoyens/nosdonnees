@@ -26,8 +26,17 @@ def nosdonnees(global_config, **local_config):
     if '/vagrant/' in global_config['__file__']:
         # you gonna dev
         local_config['ckan.site_url'] = u'http://www2.nosdonnees.fr'
+    elif 'beta.ini' in global_config['__file__']:
+        # beta
+        local_config['ckan.site_url'] = u'http://beta.nosdonnees.fr'
     else:
         # prod
         local_config['ckan.site_url'] = u'http://www.nosdonnees.fr'
-    print(local_config)
+
+    # create some dirs
+    for key in ('cache_dir', 'ofs.storage_dir'):
+        dirname = local_config[key]
+        if not os.path.isdir(dirname):
+            os.makedirs(dirname)
+
     return make_app(global_config, **local_config)
