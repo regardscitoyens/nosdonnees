@@ -1,5 +1,9 @@
 .vagrant
 *.pg_dump
+*.ini
+!development.ini
+!template.ini
+!who.ini
 root/
 ckan-rc/
 include/

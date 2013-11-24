@@ -20,5 +20,7 @@ Change some values to fit your needs
 
 Launch the server::
 
-    $ bin/gunicorn --paste beta.ini
+    $ bin/paster serve beta.ini
+
+You can use the ``wsgi.py`` file to deploy your application with apache.
 
