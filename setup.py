@@ -18,4 +18,6 @@ setup(
     entry_points='''
     [paste.app_factory]
     main = nosdonnees.ckan_wrapper:nosdonnees
+    [console_scripts]
+    nosdonnees-apache-vhost = nosdonnees.scripts:apache
     ''')

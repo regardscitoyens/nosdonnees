@@ -1,6 +1,7 @@
 .vagrant
 *.pg_dump
 *.ini
+*.common
 !development.ini
 !template.ini
 !who.ini

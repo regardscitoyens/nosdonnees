@@ -14,8 +14,8 @@ venv:
 	$(ROOT)/bin/pip install --upgrade pip
 	$(ROOT)/bin/pip install -e 'git+git@github.com:regardscitoyens/ckan.git@master#egg=ckan'
 	$(ROOT)/bin/pip install -r src/ckan/requirements.txt
-	$(ROOT)/bin/pip install gunicorn
 	$(ROOT)/bin/python setup.py develop
+	$(ROOT)/bin/nosdonnees-apache-vhost
 
 solr:
 	sudo rm /etc/solr/conf/schema.xml
