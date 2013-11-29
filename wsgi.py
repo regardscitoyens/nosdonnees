@@ -2,7 +2,7 @@
 from glob import glob
 import os
 
-instance_dir = os.path.dirname(__file__)
+instance_dir = os.path.dirname(os.abspath(__file__))
 
 # auto detect config file
 invalids = ['development.ini', 'template.ini', 'who.ini']
