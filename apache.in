@@ -5,8 +5,13 @@ DocumentRoot %(public)s
 
 %(directories)s
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^/package/(.*)$ /dataset/$1 [R,L]
+</IfModule>
+
 WSGIScriptAlias / %(here)s/wsgi.py
-WSGIDaemonProcess %(site)s display-name=%(site)s processes=4 threads=1 maximum-requests=10000
+WSGIDaemonProcess %(site)s display-name=%(site)s user=ckan group=ckan processes=4 threads=1 maximum-requests=10000
 WSGIProcessGroup %(site)s
 WSGIPassAuthorization On
 

@@ -9,7 +9,7 @@ def apache():
     for name in sorted(os.listdir(public)):
         if os.path.isdir(os.path.join(public, name)):
             directories += '''
-Alias /%(name)s %(public)s/%(name)s
+Alias /%(name)s/ %(public)s/%(name)s/
 <Directory %(public)s/%(name)s/>
     Allow from all
     Options -Indexes
@@ -24,7 +24,7 @@ Alias /%(name)s %(public)s/%(name)s
         site = 'beta'
         host = 'beta.nosdonnees.fr'
     else:
-        site = 'www'
+        site = 'ckanprod'
         host = 'www.nosdonnees.fr'
     conf = open('apache.in').read()
 
