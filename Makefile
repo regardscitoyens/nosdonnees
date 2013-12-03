@@ -24,8 +24,11 @@ user:
 	LC_ALL="C" sudo -u postgres createuser -S -D -R -P ckan_default; true
 	LC_ALL="C" sudo -u postgres createuser -S -D -R -P datastore_default; true
 
-pg: user
+pg: solr user
 	LC_ALL="C" sudo -u postgres createdb -O ckan_default ckan_default -E utf-8; true
+	cd src/ckan; LC_ALL="C" /vagrant/bin/paster db clean -c /vagrant/development.ini
+	cd src/ckan; LC_ALL="C" /vagrant/bin/paster db load -c /vagrant/development.ini /vagrant/131007-nosdonnees_db.pg_dump
+
 
 clean:
 	LC_ALL="C" sudo -u postgres dropdb ckan_test; true
@@ -33,11 +36,11 @@ clean:
 	LC_ALL="C" sudo -u postgres dropdb datastore_default; true
 
 
-test: user
+test: solr user
 	LC_ALL="C" sudo -u postgres createdb -O ckan_default ckan_test -E utf-8
 	LC_ALL="C" sudo -u postgres createdb -O ckan_default datastore_test -E utf-8
-	cd src/ckan; LC_ALL="C" $(ROOT)/bin/paster datastore set-permissions postgres -c test-core.ini
-	cd src/ckan; LC_ALL="C" $(ROOT)/bin/nosetests --ckan --with-pylons=test-core.ini ckan ckanext
+	cd src/ckan; LC_ALL="C" paster datastore set-permissions postgres -c test-core.ini
+	cd src/ckan; LC_ALL="C" nosetests --ckan --with-pylons=test-core.ini ckan ckanext
 
 serve:
 	$(PASTER) serve $(CONFIG)

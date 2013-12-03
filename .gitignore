@@ -9,4 +9,5 @@ root/
 ckan-rc/
 include/
 lib/
+data/
 local/

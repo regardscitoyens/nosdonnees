@@ -1,3 +1,6 @@
+body {
+    background: none;
+}
 .account-masthead,
 .masthead {
     background: none;
@@ -41,6 +44,9 @@
     border: 0px;
 }
 
+.simple-input .field button.btn-search {
+    display: none;
+}
 
 .account-masthead .account ul li
 {
@@ -102,4 +108,19 @@ a,
   color: #000;
   background-color: #E2E2E2;
 }
+
+form.lang-select label {
+    display: none;
+}
+
+footer h3,
+footer div {
+    color: #444444;
+}
+
+#footer-rc-logo {
+    width: 15px;
+    height: 15px;
+}
+
 

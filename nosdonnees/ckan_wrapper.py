@@ -26,6 +26,8 @@ def nosdonnees(global_config, **local_config):
     if '/vagrant/' in global_config['__file__']:
         # you gonna dev
         local_config['ckan.site_url'] = u'http://www2.nosdonnees.fr'
+        local_config['cache_dir'] = '/vagrant/data'
+        local_config['ofs.storage_dir'] = '/vagrant/data'
     elif 'beta.ini' in global_config['__file__']:
         # beta
         local_config['ckan.site_url'] = u'http://beta.nosdonnees.fr'
