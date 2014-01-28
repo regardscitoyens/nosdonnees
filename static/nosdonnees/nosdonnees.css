@@ -18,6 +18,15 @@ body {
     position:absolute;
 }
 
+hgroup a {
+ float:left;
+}
+
+.masthead hgroup h1 a {
+ color: #444444;
+ font-size: 80%;
+}
+
 .site-footer {
     background-color: #DBDBDB;
     background-image: -moz-linear-gradient(center top , #DBDBDB, #FFFFFF);
