@@ -2,6 +2,8 @@
 *.pg_dump
 *.ini
 *.common
+*.pyc
+*.egg-info
 !development.ini
 !template.ini
 !who.ini
@@ -11,3 +13,6 @@ include/
 lib/
 data/
 local/
+src/
+bin/
+man/

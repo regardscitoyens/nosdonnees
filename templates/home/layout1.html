@@ -69,8 +69,11 @@
 </div>
 <div role="main">
   <div class="container">
-    <div class="row row2">
-      {% snippet 'home/snippets/featured_group.html' %}
+    <div class="module-content box">
+      <header>
+          <h3>Activités récentes</h3>
+      </header>
+      {{ h.recently_changed_packages_activity_stream(limit=15)|safe }}
     </div>
   </div>
 </div>
