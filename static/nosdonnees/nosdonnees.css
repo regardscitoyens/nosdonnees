@@ -18,6 +18,11 @@ body {
     position:absolute;
 }
 
+.nosdonnees-header .header-image > h1 {
+	margin-top: 34px;
+	font-size: 25px;
+}
+
 hgroup a {
  float:left;
 }
