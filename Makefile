@@ -6,14 +6,16 @@ deb:
 	sudo aptitude -y update
 	LC_ALL="$(LANG)" sudo aptitude -y install python-dev solr-tomcat postgresql postgresql-client postgresql-server-dev-all libpq5 python-virtualenv git-core
 
-venv:
-	virtualenv $(ROOT)
+venv/bin/python:
+	virtualenv -p python2 $(ROOT)
 	$(ROOT)/bin/pip install --upgrade pip
 	$(ROOT)/bin/pip install -e 'git+git@github.com:regardscitoyens/ckan.git@master#egg=ckan'
 	$(ROOT)/bin/pip install -r src/ckan/requirements.txt
 	$(ROOT)/bin/pip install -r src/ckan/dev-requirements.txt
 	$(ROOT)/bin/python setup.py develop
 	$(ROOT)/bin/nosdonnees-apache-vhost
+
+venv: venv/bin/python
 
 solr:
 	sudo rm /etc/solr/conf/schema.xml
