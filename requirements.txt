@@ -10,7 +10,7 @@ Pairtree==0.7.1-T
 PasteDeploy==1.5.0
 PasteScript==1.7.5
 PyMySQL==0.6.2
-PyYAML==3.10
+PyYAML==5.1
 Pygments==1.6
 Pylons==0.9.7
 Routes==1.13
