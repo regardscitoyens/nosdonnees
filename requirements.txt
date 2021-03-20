@@ -3,7 +3,7 @@ Beaker==1.6.4
 BeautifulSoup==3.2.1
 FormAlchemy==1.4.3
 FormEncode==1.2.6
-Jinja2==2.6
+Jinja2==2.11.3
 Mako==0.8.1
 MarkupSafe==0.18
 Pairtree==0.7.1-T
