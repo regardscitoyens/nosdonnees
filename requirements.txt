@@ -4,7 +4,7 @@ BeautifulSoup==3.2.1
 FormAlchemy==1.4.3
 FormEncode==1.2.6
 Jinja2==2.6
-Mako==0.8.1
+Mako==1.2.2
 MarkupSafe==0.18
 Pairtree==0.7.1-T
 PasteDeploy==1.5.0
