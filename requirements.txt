@@ -39,7 +39,7 @@ docutils==0.8.1
 factory-boy==2.1.1
 fanstatic==0.12
 httpretty==0.6.2
-mechanize==0.2.5
+mechanize==0.4.6
 mock==1.0.1
 -e git+git@github.com:regardscitoyens/nosdonnees.git@9b5d3d8789f35fcaa4bf36cf7186077e26a676da#egg=nosdonnees-master
 nose==1.3.0
